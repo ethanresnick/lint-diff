@@ -3,7 +3,7 @@ import run from './lint-diff'
 
 const cli = meow(`
   Usage
-    $ lint-diff [<diff-input>] [<extensions>]
+    $ lint-diff <diff-input>
   Examples
     $ lint-diff
     $ lint-diff HEAD~1..HEAD
