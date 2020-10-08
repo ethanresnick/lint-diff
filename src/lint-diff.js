@@ -35,7 +35,7 @@ const formatter = linter.getFormatter()
 const getChangedFiles = extensions => pipeWith(
   then,
   [
-    commitRange => exec('git', ['diff', commitRange, '--name-only', '--diff-filter=ACMR']),
+    commitRange => exec('git', ['diff', commitRange, '--name-only', '--relative', '--diff-filter=ACMR']),
     prop('stdout'),
     split('\n'),
     filter(file => extensions.split(',').some(ext => endsWith(ext, file))),
